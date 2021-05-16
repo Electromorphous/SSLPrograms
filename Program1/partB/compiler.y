@@ -14,11 +14,12 @@ input:exp {
     exit(0);
 }
 
-exp:exp'+' exp { $$ = $1 + $3; }
-|exp'-' exp{ $$ = $1 - $3; }
-|exp'*' exp{ $$ = $1 * $3; }
-|exp'/' exp{ 
-    if( $3 == 0) {
+exp:
+ exp'+'exp { $$ = $1 + $3; }
+|exp'-'exp { $$ = $1 - $3; }
+|exp'*'exp { $$ = $1 * $3; }
+|exp'/'exp { 
+    if( $3 == 0 ) {
         printf("\n Division by zero error \n\n");
         exit(0);
     }
@@ -26,7 +27,7 @@ exp:exp'+' exp { $$ = $1 + $3; }
         $$ = $1 / $3;
     }
  }
-|exp'('exp')' { $$ = $2; }
+|'('exp')' { $$ = $2; }
 |num { $$ = $1; }
 
 %%
