@@ -1585,4 +1585,5 @@ int yyerror() {
 int main() {
     printf("\n Enter an expression \n");
     yyparse();
+    return 0;
 }
