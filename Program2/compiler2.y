@@ -17,7 +17,7 @@ S: A S B
 
 %%
 
-int yyerror(char *message) {
+int yyerror() {
     printf("\n Invalid string \n\n");
     exit(0);
 }

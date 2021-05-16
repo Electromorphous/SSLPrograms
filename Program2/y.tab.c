@@ -1532,7 +1532,7 @@ yyreturn:
 #line 18 "compiler2.y"
 
 
-int yyerror(char *message) {
+int yyerror() {
     printf("\n Invalid string \n\n");
     exit(0);
 }
