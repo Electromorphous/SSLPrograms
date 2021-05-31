@@ -1583,7 +1583,7 @@ yyreturn:
 extern FILE *yyin;
 
 int main() {
-    FILE *file = fopen("InputFile.c", 'r');
+    FILE *file = fopen("InputFile.c", "r");
     
     if(!file) {
         printf("\n Cannot open file \n");

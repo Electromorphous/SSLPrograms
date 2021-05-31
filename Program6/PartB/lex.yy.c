@@ -770,7 +770,7 @@ case 2:
 YY_RULE_SETUP
 #line 12 "code6b.l"
 {
-    printf("\n Operator is %c", yytext);
+    printf("\n Operator is %s", yytext);
     return OP;
 }
 	YY_BREAK

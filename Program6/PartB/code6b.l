@@ -10,7 +10,7 @@
 
 [\t];
 [+|-|*|/|=|<|>] {
-    printf("\n Operator is %c", yytext);
+    printf("\n Operator is %s", yytext);
     return OP;
 }
 [0-9]+ {
