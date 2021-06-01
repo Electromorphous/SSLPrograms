@@ -437,10 +437,11 @@ int yy_flex_debug = 0;
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
 #line 1 "code2.l"
-#line 2 "code2.l"
+/* Develop, implement and execute a program using YACC tool to recognize all strings ending with 'b' preceded by n 'a's using the grammar (a^n)*b (note: input n value). */
+#line 4 "code2.l"
     #include "y.tab.h"
-#line 443 "lex.yy.c"
 #line 444 "lex.yy.c"
+#line 445 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -657,10 +658,10 @@ YY_DECL
 		}
 
 	{
-#line 5 "code2.l"
+#line 7 "code2.l"
 
 
-#line 664 "lex.yy.c"
+#line 665 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -719,31 +720,31 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 7 "code2.l"
+#line 9 "code2.l"
 { return A; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 8 "code2.l"
+#line 10 "code2.l"
 { return B; }
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 9 "code2.l"
-return NL;
+#line 11 "code2.l"
+return '\n';
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 11 "code2.l"
+#line 13 "code2.l"
 { return yytext[0]; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 13 "code2.l"
+#line 15 "code2.l"
 ECHO;
 	YY_BREAK
-#line 747 "lex.yy.c"
+#line 748 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1748,7 +1749,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 13 "code2.l"
+#line 15 "code2.l"
 
 
 int yywrap() {

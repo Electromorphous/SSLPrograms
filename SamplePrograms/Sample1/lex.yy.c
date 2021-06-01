@@ -437,13 +437,14 @@ int yy_flex_debug = 0;
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
 #line 1 "sample1.l"
-#line 2 "sample1.l"
+/* Lex code to count number of 'a's in the input */
+#line 4 "sample1.l"
 
 int c = 0; /* Global Variable */
 
-#line 445 "lex.yy.c"
+#line 446 "lex.yy.c"
 /* Rules Section */
-#line 447 "lex.yy.c"
+#line 448 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -660,10 +661,10 @@ YY_DECL
 		}
 
 	{
-#line 8 "sample1.l"
+#line 10 "sample1.l"
 
 
-#line 667 "lex.yy.c"
+#line 668 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -722,20 +723,20 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 10 "sample1.l"
+#line 12 "sample1.l"
 c++;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 11 "sample1.l"
+#line 13 "sample1.l"
 ;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 13 "sample1.l"
+#line 15 "sample1.l"
 ECHO;
 	YY_BREAK
-#line 739 "lex.yy.c"
+#line 740 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1740,12 +1741,12 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 13 "sample1.l"
+#line 15 "sample1.l"
 
 
 int main()
 {
-    printf("\n %d \n",yylex());
-    printf("    The no of a's in the given string %d \n",c);
+    yylex();
+    printf("The no of a's in the given string %d \n",c);
 }
 

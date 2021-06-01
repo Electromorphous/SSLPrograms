@@ -1,3 +1,5 @@
+/* Write a LEX program to recognize valid arithmetic expression. Identifiers in the expression could be only integers and operators could be + and *. Count the identifiers & operators present and print them separately. */
+
 %{
     #include <stdio.h>
     int v = 0, op = 0, id = 0, flag = 0;

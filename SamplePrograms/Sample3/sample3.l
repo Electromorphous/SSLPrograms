@@ -1,3 +1,5 @@
+/* Lex code to count number of words */
+
 %{
     #include<stdio.h>
     #include<string.h>

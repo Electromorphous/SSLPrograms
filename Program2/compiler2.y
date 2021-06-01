@@ -3,16 +3,17 @@
     #include <stdlib.h>
 %}
 
-%token A B NL
+%token A B
 
 %%
 
-stmt: S NL {
+input: S '\n' {
     printf("\n Valid string \n\n");
     exit(0);
 }
 
-S: A S B
+ S: A S1 B
+|S1: A S1
 |;
 
 %%

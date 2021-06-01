@@ -1,3 +1,5 @@
+/* Lex code to count number of lines, tabs and spaces */
+
 %{
 #include<stdio.h>
 int lc = 0, sc = 0, tc = 0, ch = 0;
