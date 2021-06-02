@@ -4,19 +4,9 @@
 #include <stdio.h>
 #include <string.h>
 
-char prod[3][15] = {
-    "A -> aBa",
-    "B -> bB",
-    "B -> @"
-};
-char table[2][3][3] = {
-    { "aBa", "", "" },
-    { "@", "bB", "" }
-};
-int size[2][3] = { 
-    { 3, 0, 0 }, 
-    { 1, 2, 0 }
-};
+char prod[3][15] = {"A->aBa", "B->bB", "B->@"};
+char table[2][3][3] = {{ "aBa", "", "" }, { "@", "bB", "" }};
+int size[2][3] = {3, 0, 0, 1, 2, 0};
 int n;
 char s[20], stack[20];
 
@@ -26,20 +16,15 @@ void display(int i, int j) {
         printf("%c", stack[k]);
     printf(" ");
 
-    for (int k = j; k <= n; k++)
+    for (int k = j; k < n; k++)
         printf("%c", s[k]);
     printf("\n");
 }
 
-void main() {
-    
+int main() {
+
     int i, j, k, row, col;
     printf("\n The grammar is \n");
-
-    for (i = 0; i < 20; i++) {
-        stack[i] = '\0';
-        s[i] = '\0';
-    }
 
     for (i = 0; i < 3; i++)
         printf("%s \n", prod[i]);
@@ -52,7 +37,7 @@ void main() {
         if (i == 0)
             printf(" A ");
         else
-            printf("\n B");
+            printf("\n B ");
 
         for (j = 0; j < 3; j++)
             printf("\t %s", table[i][j]);
@@ -65,12 +50,14 @@ void main() {
     stack[0] = '$';
     stack[1] = 'A';
     
-    i = 1; j = 0;
+    i = 1;
+    j = 0;
 
     printf("\n Stack Input \n");
     printf("_______________________\n");
 
     while(1) {
+
         if (stack[i] == s[j]) {
             i--;
             j++;
@@ -87,18 +74,23 @@ void main() {
         }
 
         switch (stack[i]) {
-            case 'A': row = 0;
-            break;
-            case 'B': row = 1;
-            break;
+            case 'A':
+                row = 0;
+                break;
+            case 'B':
+                row = 1;
+                break;
         }
         switch (s[j]) {
-            case 'a': col = 0;
-            break;
-            case 'b': col = 1;
-            break;
-            case '$': col = 2;
-            break;
+            case 'a':
+                col = 0;
+                break;
+            case 'b':
+                col = 1;
+                break;
+            case '$':
+                col = 2;
+                break;
         }
         
         if (table[row][col][0] == '\0') {
@@ -110,7 +102,7 @@ void main() {
             display(i, j);
         }
         else {
-            for (k = size[row][col] - 1; k >= 0; k++) {
+            for (k = size[row][col] - 1; k >= 0; k--) {
                 stack[i] = table[row][col][k];
                 i++;
             }
@@ -118,4 +110,6 @@ void main() {
             display(i, j);
         }
     }
+
+    return 0;
 }
