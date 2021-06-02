@@ -17,7 +17,6 @@ char a[16], ac[20], stk[15], act[10];
 
 void check()
 {
-
     strcpy(ac, "Reduce");
 
     for (z = 0; z < c; z++)
@@ -87,7 +86,6 @@ void check()
 
 int main()
 {
-
     printf("Grammer is \n E -> E + T | T \n T -> T * F | F \n F -> (E) \n F -> id \n");
     printf("Enter input string : ");
     scanf("%s", a);

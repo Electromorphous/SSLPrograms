@@ -28,7 +28,7 @@ int n;
 char s[20], stack[20];
 
 void display(int i, int j) {
-    
+
     for (int k = 0; k <= i; k++)
         printf("%c", stack[k]);
     printf(" \t ");

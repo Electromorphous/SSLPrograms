@@ -81,7 +81,8 @@ int main()
             }
         }
     }
-    //Display Table
+
+    // Display Table
     for (int j = 0; j < n2; j++)
         cout << "\t" << terms[j];
     cout << endl;
@@ -95,7 +96,8 @@ int main()
         }
         cout << endl;
     }
-    //Parsing String
+    
+    // Parsing String
     char c;
     do
     {
