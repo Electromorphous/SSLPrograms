@@ -30,7 +30,7 @@ int isKeyword(char buffer[])
 int main()
 {
     char ch, buffer[15], operators[] = "+-*/%=";
-    ifstream fin("program.txt");
+    ifstream fin("InputFile.c");
     int i, j = 0;
     if (!fin.is_open())
     {
