@@ -4,9 +4,19 @@
 #include <stdio.h>
 #include <string.h>
 
-char prod[3][15] = {"A->aBa", "B->bB", "B->@"};
-char table[2][3][3] = {{ "aBa", "", "" }, { "@", "bB", "" }};
-int size[2][3] = {3, 0, 0, 1, 2, 0};
+char prod[3][15] = {
+    "A -> aBa",
+    "B -> bB",
+    "B -> @"
+};
+char table[2][3][3] = {
+    { "aBa", "", "" },
+    { "@", "bB", "" }
+};
+int size[2][3] = {
+    { 3, 0, 0 },
+    { 1, 2, 0 }
+};
 int n;
 char s[20], stack[20];
 
@@ -14,7 +24,7 @@ void display(int i, int j) {
     
     for (int k = 0; k <= i; k++)
         printf("%c", stack[k]);
-    printf(" ");
+    printf(" \t ");
 
     for (int k = j; k < n; k++)
         printf("%c", s[k]);
@@ -53,8 +63,8 @@ int main() {
     i = 1;
     j = 0;
 
-    printf("\n Stack Input \n");
-    printf("_______________________\n");
+    printf("\n Stack \t Input \n");
+    printf("_____________________________________\n");
 
     while(1) {
 
@@ -63,7 +73,7 @@ int main() {
             j++;
 
             if (stack[i] == '$' && s[j] == '$') {
-                printf("$ $ \n Success \n");
+                printf("$ \t $ \n Success \n");
                 break;
             }
             if (stack[i] == '$' && s[j] != '$') {
