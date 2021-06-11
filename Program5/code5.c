@@ -28,32 +28,32 @@ void main()
             break;
         if (strcmp(op, "+") == 0)
         {
-            fprintf(fp2, "MOV R0,%s\n", arg1);
-            fprintf(fp2, "ADD R0,%s\n", arg2);
-            fprintf(fp2, "MOV %s,R0\n", result);
+            fprintf(fp2, "MOV R0, %s\n", arg1);
+            fprintf(fp2, "ADD R0, %s\n", arg2);
+            fprintf(fp2, "MOV %s, R0\n", result);
         }
         if (strcmp(op, "*") == 0)
         {
-            fprintf(fp2, "MOV R0,%s\n", arg1);
-            fprintf(fp2, "MUL R0,%s\n", arg2);
-            fprintf(fp2, "MOV %s,R0\n", result);
+            fprintf(fp2, "MOV R0, %s\n", arg1);
+            fprintf(fp2, "MUL R0, %s\n", arg2);
+            fprintf(fp2, "MOV %s, R0\n", result);
         }
         if (strcmp(op, "-") == 0)
         {
-            fprintf(fp2, "MOV R0,%s\n", arg1);
-            fprintf(fp2, "SUB R0,%s\n", arg2);
-            fprintf(fp2, "MOV %s,R0\n", result);
+            fprintf(fp2, "MOV R0, %s\n", arg1);
+            fprintf(fp2, "SUB R0, %s\n", arg2);
+            fprintf(fp2, "MOV %s, R0\n", result);
         }
         if (strcmp(op, "/") == 0)
         {
-            fprintf(fp2, "MOV R0,%s\n", arg1);
-            fprintf(fp2, "DIV R0,%s\n", arg2);
-            fprintf(fp2, "MOV %s,R0\n", result);
+            fprintf(fp2, "MOV R0, %s\n", arg1);
+            fprintf(fp2, "DIV R0, %s\n", arg2);
+            fprintf(fp2, "MOV %s, R0\n", result);
         }
         if (strcmp(op, "=") == 0)
         {
-            fprintf(fp2, "MOV R0,%s\n", arg1);
-            fprintf(fp2, "MOV %s,R0\n", result);
+            fprintf(fp2, "MOV R0, %s\n", arg1);
+            fprintf(fp2, "MOV %s, R0\n", result);
         }
     }
     fclose(fp1);
