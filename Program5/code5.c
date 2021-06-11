@@ -2,7 +2,7 @@
 
     Design, develop and implement a C/Java program to
     generate the machine code using Triples for the statement
-    A = -B * (C +D) whose intermediate code in three-address form:
+    A = -B * (C +D) whose intermediate code in three-address form is...
 
     T1 = -B
     T2 = C + D
