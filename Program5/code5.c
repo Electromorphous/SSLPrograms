@@ -24,8 +24,7 @@ void main()
     for (;;)
     {
         fscanf(fp1, "%s%s%s%s", result, arg1, op, arg2);
-        if (feof(fp1))
-            break;
+        
         if (strcmp(op, "+") == 0)
         {
             fprintf(fp2, "MOV R0, %s\n", arg1);
@@ -55,6 +54,10 @@ void main()
             fprintf(fp2, "MOV R0, %s\n", arg1);
             fprintf(fp2, "MOV %s, R0\n", result);
         }
+
+        if (feof(fp1))
+            break;
+
     }
     fclose(fp1);
     fclose(fp2);
