@@ -52,7 +52,7 @@ void main()
             roundrobin(n, tq, st, bt);
             break;
         case 2:
-            printf("\n \n ---SHORTEST REMAINING TIME            NEXT---\n \n ");
+            printf("\n \n ---SHORTEST REMAINING TIME NEXT---\n \n ");
             printf("\n \n Enter the number of processes: ");
             scanf("%d", &n);
             srtf(n);
