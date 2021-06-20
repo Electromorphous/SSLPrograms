@@ -17,7 +17,7 @@ struct proc
     int finish;
     int turnaround;
     float ratio;
-} process[10]; //structure to hold the process information
+} process[10]; // structure to hold the process information
 
 struct proc temp;
 int no;
@@ -38,14 +38,14 @@ void main()
         switch (choice)
         {
         case 1:
-            printf("Round Robin scheduling algorithm\n");
-            printf("Enter number of processes:\n");
+            printf("Round Robin scheduling algorithm \n");
+            printf("Enter number of processes: ");
             scanf("%d", &n);
-            printf("Enter burst time for sequences:");
+            printf("Enter burst time for sequences: ");
             for (i = 0; i < n; i++)
             {
                 scanf("%d", &bt[i]);
-                st[i] = bt[i]; //service time
+                st[i] = bt[i]; // service time
             }
             printf("Enter time quantum:");
             scanf("%d", &tq);
@@ -59,9 +59,10 @@ void main()
             break;
         case 3:
             exit(0);
-        } // end of switch
-    }     // end of for
-} //end of main()
+        }
+    }
+}
+
 void roundrobin(int n, int tq, int st[], int bt[])
 {
     int time = 0;
@@ -78,7 +79,7 @@ void roundrobin(int n, int tq, int st[], int bt[])
                 continue;
             }
             if (st[i] > tq)         // when service time of a process greater than time quantum then time
-                st[i] = st[i] - tq; //quantum value subtracted from service time
+                st[i] = st[i] - tq; // quantum value subtracted from service time
             else if (st[i] >= 0)
             {
                 temp1 = st[i]; // temp1 stores the service time of a process
@@ -87,11 +88,10 @@ void roundrobin(int n, int tq, int st[], int bt[])
             sq = sq + temp1; // utilizing temp1 value to calculate turnaround time
             tat[i] = sq;     // turn around time
         }
-        //end of for
         if (n == count) // it indicates all processes have completed their task because the count value
             break;      // incremented when service time equals 0
     }
-    //end of while
+
     for (i = 0; i < n; i++) // to calculate the wait time and turnaround time of each process
     {
         wt[i] = tat[i] - bt[i]; // waiting time calculated from the turnaround time burst time
@@ -105,7 +105,7 @@ void roundrobin(int n, int tq, int st[], int bt[])
         printf("%d\t\t%d\t\t%d\t\t%d\n", i + 1, bt[i], wt[i], tat[i]);
     printf("Avg wait time is %f\n Avg turn around time is %f\n", awt, atat);
 }
-// end of Round Robin
+
 int chkprocess(int s) // function to check process remaining time is zero or not
 {
     int i;
@@ -115,11 +115,12 @@ int chkprocess(int s) // function to check process remaining time is zero or not
             return 1;
     }
     return 0;
-} // end of chkprocess
+}
+
 int nextprocess() // function to identify the next process to be executed
 {
     int min, l, i;
-    min = 32000; //any limit assumed
+    min = 32000; // any limit assumed
     for (i = 1; i <= no; i++)
     {
         if (process[i].rem != 0 && process[i].rem < min)
@@ -129,7 +130,8 @@ int nextprocess() // function to identify the next process to be executed
         }
     }
     return l;
-} // end of nextprocess
+}
+
 void srtf(int n)
 {
     int i, j, k, time = 0;
@@ -163,7 +165,7 @@ void srtf(int n)
     {
         if (process[no + 1].arrival == time)
         {
-            //if(process[no+1].arrival==time)
+            // if(process[no+1].arrival==time)
             no++;
             if (process[j].rem == 0)
                 process[j].finish = time;
@@ -197,11 +199,11 @@ void srtf(int n)
         process[i].turnaround = process[i].wait + process[i].burst; // calc of turnaround
         process[i].ratio = (float)process[i].turnaround / (float)process[i].burst;
         printf("%8d %11d %10d %15d %17d %16d%10.1f ", process[i].id, process[i].arrival, process[i].burst, process[i].wait, process[i].finish, process[i].turnaround, process[i].ratio);
-        tavg = tavg + process[i].turnaround; //summation of turnaround time
+        tavg = tavg + process[i].turnaround; // summation of turnaround time
         wavg = wavg + process[i].wait;       // summation of waiting time
         printf("\n\n");
     }
     tavg = tavg / n; // average turnaround time
     wavg = wavg / n; // average wait time
     printf("tavg=%f\t wavg=%f\n", tavg, wavg);
-} // end of srtf
+}
