@@ -1,14 +1,12 @@
-// Design, develop and implement a C/C++/Java program
-// to implement Banker’s algorithm. Assume suitable input
-// required to demonstrate the results.
-
 #include <stdio.h>
 #include <stdlib.h>
 
 int main()
 {
-    int Max[100][100], need[100][100], alloc[100][100], avail[100], completed[100], safeSequence[100];
+    int max[10][10], need[10][10], alloc[10][10],
+        avail[10], completed[10], safeSequence[10];
     int p, r, i, j, process, count;
+
     count = 0;
 
     printf("Enter the no of processes : ");
@@ -25,7 +23,7 @@ int main()
     {
         printf("\nFor process %d : ", i + 1);
         for (j = 0; j < r; j++)
-            scanf("%d", &Max[i][j]);
+            scanf("%d", &max[i][j]);
     }
 
     printf("\n\nEnter the allocation for each process");
@@ -36,19 +34,20 @@ int main()
             scanf("%d", &alloc[i][j]);
     }
 
-    printf("\n\nEnter the Available Resources");
+    printf("\n\nEnter the Available Resources : ");
     for (i = 0; i < r; i++)
         scanf("%d", &avail[i]);
     for (i = 0; i < p; i++)
         for (j = 0; j < r; j++)
-            need[i][j] = Max[i][j] - alloc[i][j];
+            need[i][j] = max[i][j] - alloc[i][j];
+
     do
     {
-        printf("\n Max matrix \t Allocation matrix\n");
+        printf("\n Max matrix:\tAllocation matrix\n");
         for (i = 0; i < p; i++)
         {
             for (j = 0; j < r; j++)
-                printf("%d ", Max[i][j]);
+                printf("%d ", max[i][j]);
             printf("\t\t");
             for (j = 0; j < r; j++)
                 printf("%d ", alloc[i][j]);
@@ -69,21 +68,19 @@ int main()
                     }
                 }
             }
+            if (process != -1)
+                break;
         }
-
-        if (process != -1)
-            break;
-
         if (process != -1)
         {
-            printf("\nProcess %d runs to completion!\n", process + 1);
+            printf("\nProcess %d runs to completion!", process + 1);
             safeSequence[count] = process + 1;
             count++;
             for (j = 0; j < r; j++)
             {
                 avail[j] += alloc[process][j];
                 alloc[process][j] = 0;
-                Max[process][j] = 0;
+                max[process][j] = 0;
                 completed[process] = 1;
             }
         }
@@ -93,13 +90,30 @@ int main()
     {
         printf("\nThe system is in a safe state!!\n");
         printf("Safe Sequence : < ");
-
         for (i = 0; i < p; i++)
             printf("%d ", safeSequence[i]);
         printf(">\n");
     }
     else
         printf("\nThe system is in an unsafe state!!\n");
-
-    return 0;
 }
+
+/*
+
+5
+3
+7 5 3
+3 2 2
+9 0 2
+2 2 2
+4 3 3
+
+0 1 0
+2 0 0
+3 0 2
+2 1 1
+0 0 2
+
+3 3 2
+
+*/
