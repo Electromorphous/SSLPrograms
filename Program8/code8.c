@@ -47,7 +47,7 @@ int main()
 
     do
     {
-        printf("\n Max matrix:\tAllocation matrix\n");
+        printf("\n Max matrix\tAllocation matrix\n");
         for (i = 0; i < p; i++)
         {
             for (j = 0; j < r; j++)
