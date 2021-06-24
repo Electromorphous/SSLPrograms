@@ -1,3 +1,7 @@
+// Design, develop and implement a C/C++/Java program
+// to implement Banker’s algorithm. Assume suitable input
+// required to demonstrate the results.
+
 #include <stdio.h>
 #include <stdlib.h>
 
