@@ -26,7 +26,7 @@ void FIFO(char s[], char F[], int l, int f)
             for (k = 0; k < f; k++)
                 printf("%c", F[k]);
 
-            printf("\t page-fault : %d", cnt);
+            printf("\t page_fault : %d", cnt);
             cnt++;
         }
         else
